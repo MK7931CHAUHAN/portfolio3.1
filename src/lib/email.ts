@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer';
 
-export const sendEmail = async ({ name, email, message }: { name: string, email: string, message: string }) => {
+export const sendEmail = async ({ name, email, message, location }: { name: string, email: string, message: string, location?: string }) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -19,6 +19,7 @@ export const sendEmail = async ({ name, email, message }: { name: string, email:
         <h2 style="color: #333;">New Message from Portfolio</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Location:</strong> ${location || 'Not tracked'}</p>
         <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;" />
         <p><strong>Message:</strong></p>
         <p style="white-space: pre-wrap;">${message}</p>
