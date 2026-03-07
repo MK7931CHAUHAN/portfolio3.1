@@ -9,7 +9,7 @@ const hackerFont = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "MITHLESH | CYBER_ARCHITECT",
+  title: "portfolio ",
   description: "Portfolio of Mithlesh Kumar - Digital Security & Full Stack Architecture",
 };
 
