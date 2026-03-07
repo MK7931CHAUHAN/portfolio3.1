@@ -22,7 +22,7 @@ const AboutPage = () => {
                 >
                     <div className="mb-4 text-[10px] font-black uppercase tracking-[1em] text-green-500/30">{`> DECRYPTING_HUMAN_INTERFACE...`}</div>
                     <h1 className="text-6xl font-black uppercase tracking-tighter md:text-9xl">
-                        IDENTITY_<span className="text-green-500/20">KUMAR</span>_
+                        IDENTITY_<span className="text-green-500/20">MITHLESH</span>_
                     </h1>
                     <p className="mt-8 text-sm font-medium leading-loose opacity-60 border-l border-green-500/30 pl-6 py-4">
                         {`> _BOOT_SEQUENCE_IDENTIFIED`} <br />

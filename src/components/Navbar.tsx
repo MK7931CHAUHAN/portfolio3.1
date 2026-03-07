@@ -20,7 +20,7 @@ const Navbar = () => {
         { name: "SYSTEM_ABOUT", href: "/about", icon: Shield },
         { name: "TECH_SKILLS", href: "/about#skills", icon: Cpu },
         { name: "CODE_VAULT", href: "/projects", icon: Terminal },
-        { name: "CERT_LOGS", href: "/about#certificates", icon: Award },
+        { name: "CERT_LOGS", href: "/certificates", icon: Award },
         { name: "COMM_LINK", href: "/contact", icon: Shield },
     ];
 

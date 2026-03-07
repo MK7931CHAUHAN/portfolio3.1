@@ -87,9 +87,9 @@ export const EXPERIENCE = [
 ];
 
 export const CERTIFICATES = [
-    { title: "JAVA", issuer: "Get It project Pvt. Ltd", date: "Feb 2024" },
-    { title: "DSA (Data Structure Algorithms)", issuer: "GeeksforGeeks", date: "Dec 2025" },
-    { title: "Database (DB)", issuer: "Oracle", date: "Nov 2025" }
+    { id: 1, title: "JAVA", issuer: "Get It project Pvt. Ltd", date: "Feb 2024" },
+    { id: 2, title: "DSA (Data Structure Algorithms)", issuer: "GeeksforGeeks", date: "Dec 2025" },
+    { id: 3, title: "Database (DB)", issuer: "Oracle", date: "Nov 2025" }
 ];
 
 export const ACHIEVEMENTS = [

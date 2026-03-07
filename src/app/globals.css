@@ -1,8 +1,12 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: 'Hacker';
-  src: url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;400;700&display=swap');
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-green-500: #22c55e;
+  --color-hacker-green: var(--hacker-green);
+  --shadow-hacker-glow: 0 0 15px var(--hacker-glow);
+  --font-mono: var(--font-hacker), ui-monospace, monospace;
 }
 
 :root {
@@ -23,13 +27,6 @@
   --border-color: rgba(0, 255, 0, 0.3);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-hacker);
-  --font-mono: var(--font-hacker);
-}
-
 html {
   scroll-behavior: smooth;
   background-color: var(--background);
@@ -38,83 +35,13 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-hacker), monospace;
+  font-family: var(--font-hacker), ui-monospace, monospace;
   overflow-x: hidden;
   position: relative;
   transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-/* CRT Scanline Effect */
-body::before {
-  content: " ";
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%),
-    linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
-  z-index: 1000;
-  background-size: 100% 3px, 2px 100%;
-  pointer-events: none;
-  opacity: 0.1;
-}
-
-/* Hacker Scrollbar */
-::-webkit-scrollbar {
-  width: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--background);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--hacker-green);
-  opacity: 0.5;
-}
-
-.glow-text {
-  text-shadow: 0 0 10px var(--hacker-glow);
-}
-
+/* Hacker Card */
 .hacker-card {
-  @apply border border-green-500/20 bg-background/50 backdrop-blur-md transition-all hover:border-green-500/50 hover:shadow-[0_0_20px_var(--hacker-glow)];
-}
-
-.glitch-text {
-  display: inline-block;
-  animation: glitch 3s infinite;
-}
-
-@keyframes glitch {
-  0% {
-    transform: skew(0deg);
-  }
-
-  2% {
-    transform: skew(3deg);
-    color: #ff0000;
-  }
-
-  4% {
-    transform: skew(-3deg);
-    color: #0000ff;
-  }
-
-  6% {
-    transform: skew(0deg);
-  }
-
-  100% {
-    transform: skew(0deg);
-  }
-}
-
-/* Grid Animation */
-.hacker-grid {
-  background-image: linear-gradient(var(--grid-color) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-  background-size: 50px 50px;
+  @apply border border-green-500/20 bg-black/20 backdrop-blur-md transition-all hover:border-green-500/50;
 }

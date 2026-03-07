@@ -3,18 +3,28 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
+interface Particle {
+    x: number;
+    y: number;
+    opacity: number;
+    duration: number;
+    size: number;
+    delay: number;
+}
+
 const ScientificBackground = () => {
     const [mounted, setMounted] = React.useState(false);
-    const [particles, setParticles] = React.useState<any[]>([]);
+    const [particles, setParticles] = React.useState<Particle[]>([]);
 
     React.useEffect(() => {
         setMounted(true);
-        const newParticles = Array.from({ length: 40 }).map(() => ({
+        const newParticles = Array.from({ length: 20 }).map(() => ({
             x: Math.random() * 100,
             y: Math.random() * 100,
             opacity: Math.random() * 0.3 + 0.1,
             duration: Math.random() * 3 + 2,
             size: Math.random() * 2 + 1,
+            delay: Math.random() * 5,
         }));
         setParticles(newParticles);
     }, []);
@@ -48,7 +58,7 @@ const ScientificBackground = () => {
                         duration: p.duration,
                         repeat: Infinity,
                         ease: "linear",
-                        delay: Math.random() * 5
+                        delay: p.delay
                     }}
                     style={{ width: p.size, height: p.size * 20 }}
                     className="absolute bg-green-500/20 blur-[1px]"
